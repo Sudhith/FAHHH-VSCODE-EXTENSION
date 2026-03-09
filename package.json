@@ -3,7 +3,7 @@
   "displayName": "FAAHHH! On Error",
   "description": "Plays the FAAHHH meme sound whenever an error occurs in your code ",
   "version": "1.0.0",
-  "publisher": "Sai Sudhith",
+  "publisher": "SaiSudhithDevadatta",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.74.0"
@@ -12,7 +12,7 @@
   "keywords": ["meme", "sound", "error", "fun", "fahhh"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sai Sudhith/fahhh-on-error"
+    "url": "https://github.com/saisudhith/fahhh-on-error"
   },
   "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
