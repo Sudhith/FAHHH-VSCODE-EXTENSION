@@ -1,0 +1,59 @@
+{
+  "name": "fahhh-on-error",
+  "displayName": "FAAHHH! On Error",
+  "description": "Plays the FAAHHH meme sound whenever an error occurs in your code ",
+  "version": "1.0.0",
+  "publisher": "Sai Sudhith",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["meme", "sound", "error", "fun", "fahhh"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/fahhh-on-error"
+  },
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fahhh.toggle",
+        "title": "FAAHHH: Toggle Sound On/Off"
+      },
+      {
+        "command": "fahhh.testSound",
+        "title": "FAAHHH: Test Sound"
+      }
+    ],
+    "configuration": {
+      "title": "FAAHHH On Error",
+      "properties": {
+        "fahhh.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the FAAHHH sound on errors"
+        },
+        "fahhh.cooldownMs": {
+          "type": "number",
+          "default": 3000,
+          "description": "Minimum milliseconds between sounds (prevents spam)"
+        },
+        "fahhh.customSoundPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to a custom sound file (.mp3 or .wav). Leave empty to use the default FAAHHH sound."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
