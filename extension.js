@@ -15,11 +15,11 @@ function playSound(soundPath) {
 
   try {
     if (platform === 'win32') {
-      // Windows — use PowerShell
-      spawn('powershell', [
-        '-c',
-        `(New-Object Media.SoundPlayer '${soundPath}').PlaySync()`
-      ], { detached: true, stdio: 'ignore' }).unref();
+  spawn('powershell', [
+    '-ExecutionPolicy', 'Bypass',
+    '-c',
+    `Add-Type -AssemblyName presentationCore; $player = New-Object System.Windows.Media.MediaPlayer; $player.Open([System.Uri]'${soundPath}'); $player.Play(); Start-Sleep -Seconds 3`
+  ], { detached: true, stdio: 'ignore' }).unref();
 
     } else if (platform === 'darwin') {
       // macOS — use afplay
